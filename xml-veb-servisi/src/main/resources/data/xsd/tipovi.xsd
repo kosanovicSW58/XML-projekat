@@ -180,6 +180,28 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
+    <xs:complexType name="Licni_podaci_osoba_drzavljanstvo">
+        <xs:complexContent>
+            <xs:extension base="tip:Licni_podaci_osoba">
+                <xs:sequence>
+                    <xs:element name="Drzavljanstvo">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="SRB"/>
+                                <xs:enumeration value="HR"/>
+                                <xs:enumeration value="BIH"/>
+                                <xs:enumeration value="HU"/>
+                                <xs:enumeration value="RU"/>
+                                <xs:enumeration value="RUS"/>
+                                <xs:enumeration value="US"/>
+                                <xs:enumeration value="UK"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
     <xs:complexType name="Licni_podaci_obsoba_jednostavno">
         <xs:complexContent>
             <xs:extension base="tip:Licni_podaci_jednostavno">
@@ -204,7 +226,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <xs:complexType name="Licni_podaci_firma_jednosavno">
+    <xs:complexType name="Licni_podaci_firma_jednostavno">
         <xs:complexContent>
             <xs:extension base="tip:Licni_podaci_jednostavno">
                 <xs:sequence>
@@ -219,6 +241,27 @@
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="Licni_podaci_osoba_samo_adresa">
+        <xs:sequence>
+            <xs:element name="Adresa" type="tip:Adresa"/>
+            <xs:element name="Ime">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="2"/>
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Prezime">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="2"/>
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
     </xs:complexType>
     <xs:complexType name="Prijava">
         <xs:sequence>

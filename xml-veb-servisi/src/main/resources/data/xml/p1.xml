@@ -25,7 +25,7 @@
             </tip:Kontakt>
             <tip:Ime>Ime0</tip:Ime>
             <tip:Prezime>Prezime0</tip:Prezime>
-            <zzpp:Drzavljanstvo>SRB</zzpp:Drzavljanstvo>
+            <tip:Drzavljanstvo>SRB</tip:Drzavljanstvo>
         </zzpp:Podaci_o_podnosiocu_prijave_osoba>
     </zzpp:Podaci_o_podnosiocu_prijave>
     <zzpp:Podaci_o_pronalazacu>
@@ -47,7 +47,7 @@
         <tip:Prezime>Prezime1</tip:Prezime>
     </zzpp:Podaci_o_pronalazacu>
     <zzpp:Podaci_o_punomocniku_za_zastupanje>
-        <zzpp:Podaci_o_punomocniku_za_zastupanje_firma>
+        <zzpp:Podaci_o_punomocniku_za_zastupanje_osoba>
             <tip:Adresa>
                 <tip:Ulica>
                     <tip:Naziv>Naziv2</tip:Naziv>
@@ -60,8 +60,9 @@
                 <tip:Telefon>0000000</tip:Telefon>
                 <tip:Email>+@-.-</tip:Email>
             </tip:Kontakt>
-            <tip:Ime_firme>Ime_firme0</tip:Ime_firme>
-        </zzpp:Podaci_o_punomocniku_za_zastupanje_firma>
+            <tip:Ime>Ime2</tip:Ime>
+            <tip:Prezime>Prezime2</tip:Prezime>
+        </zzpp:Podaci_o_punomocniku_za_zastupanje_osoba>
     </zzpp:Podaci_o_punomocniku_za_zastupanje>
     <zzpp:Podaci_o_adresi_za_dostavljanje>
         <tip:Ulica>
@@ -73,9 +74,9 @@
     </zzpp:Podaci_o_adresi_za_dostavljanje>
     <zzpp:Nacin_dostavljanja>elektronski</zzpp:Nacin_dostavljanja>
     <zzpp:Prijava>
-        <zzpp:Dopunska_prijava>
+        <zzpp:Izdvojena_prijava>
             <tip:Broj_prijave>50</tip:Broj_prijave>
             <tip:Datum_prijave>2006-05-04</tip:Datum_prijave>
-        </zzpp:Dopunska_prijava>
+        </zzpp:Izdvojena_prijava>
     </zzpp:Prijava>
 </zzpp:Zahtev_za_priznanje_patenta>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.ftn-intelektualna-svojina.rs/ZahtevZaPriznanjePatenta"
+    xmlns:tip="http://www.ftn-intelektualna-svojina.rs/tipovi"
+    xmlns:zzpp="http://www.ftn-intelektualna-svojina.rs/ZahtevZaPriznanjePatenta">
+    <xs:import namespace="http://www.ftn-intelektualna-svojina.rs/tipovi"
+        schemaLocation="tipovi.xsd"/>
+    <xs:element name="Zahtev_za_priznanje_patenta">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Naziv_pronalaska">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Na_srpskom">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="2"/>
+                                        <xs:maxLength value="20"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Na_engleskom">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="2"/>
+                                        <xs:maxLength value="20"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:choice>
+                    <xs:element name="Podaci_o_podnosiocu_prijave_osoba">
+                        <xs:complexType>
+                            <xs:complexContent>
+                                <xs:extension base="tip:Licni_podaci_osoba">
+                                    <xs:sequence>
+                                        <xs:element name="Drzavljanstvo">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="SRB"/>
+                                                  <xs:enumeration value="HR"/>
+                                                  <xs:enumeration value="BIH"/>
+                                                  <xs:enumeration value="HU"/>
+                                                  <xs:enumeration value="RU"/>
+                                                  <xs:enumeration value="RUS"/>
+                                                  <xs:enumeration value="US"/>
+                                                  <xs:enumeration value="UK"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:extension>
+                            </xs:complexContent>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Podaci_o_podnosiocu_prijave_firma"
+                        type="tip:Licni_podaci_firma"/>
+                </xs:choice>
+                <xs:element name="Podaci_o_pronalazacu" type="tip:Licni_podaci_osoba"/>
+                <xs:choice>
+                    <xs:element name="Podaci_o_punomocniku_za_zastupanje"
+                        type="tip:Licni_podaci_obsoba_jednostavno"/>
+                    <xs:element name="Podaci_o_punomocniku_za_zastupanje_firma"
+                        type="tip:Licni_podaci_firma_jednosavno"/>
+                </xs:choice>
+                <xs:element name="Podaci_o_adresi_za_dostavljanje" type="tip:Adresa_bez_drzave"/>
+                <xs:element maxOccurs="1" minOccurs="1" name="Nacin_dostavljanja">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="elektronski"/>
+                            <xs:enumeration value="papirna forma"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Prijava">
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element name="Dopunska_prijava" type="tip:Prijava"/>
+                            <xs:element name="Izdvojena_prijava" type="tip:Prijava"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

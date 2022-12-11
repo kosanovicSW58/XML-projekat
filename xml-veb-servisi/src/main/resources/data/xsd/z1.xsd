@@ -23,22 +23,36 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:choice>
-                    <xs:element name="Podaci_o_podnosiocu_prijave_osoba"
-                        type="tip:Licni_podaci_osoba"> </xs:element>
-                    <xs:element name="Podaci_o_podnosiocu_prijave_firma"
-                        type="tip:Licni_podaci_firma"/>
-                </xs:choice>
-                <xs:choice>
-                    <xs:element name="Podaci_o_punomocniku_osoba" type="tip:Licni_podaci_osoba"/>
-                    <xs:element name="Podaci_o_punomocniku_firma" type="tip:Licni_podaci_firma"/>
-                </xs:choice>
-                <xs:choice>
-                    <xs:element name="Podaci_o_zajednickom_predstavniku_osoba"
-                        type="tip:Licni_podaci_osoba"> </xs:element>
-                    <xs:element name="Podaci_o_zajednickom_predstavniku_firma"
-                        type="tip:Licni_podaci_firma"/>
-                </xs:choice>
+                <xs:element name="Podaci_o_podnosiocu_prijave">
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element name="Podaci_o_podnosiocu_prijave_osoba"
+                                type="tip:Licni_podaci_osoba"> </xs:element>
+                            <xs:element name="Podaci_o_podnosiocu_prijave_firma"
+                                type="tip:Licni_podaci_firma"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Podaci_o_punomocniku">
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element name="Podaci_o_punomocniku_osoba"
+                                type="tip:Licni_podaci_osoba"/>
+                            <xs:element name="Podaci_o_punomocniku_firma"
+                                type="tip:Licni_podaci_firma"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Podaci_o_zajednickom_predstavniku">
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element name="Podaci_o_zajednickom_predstavniku_osoba"
+                                type="tip:Licni_podaci_osoba"> </xs:element>
+                            <xs:element name="Podaci_o_zajednickom_predstavniku_firma"
+                                type="tip:Licni_podaci_firma"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="Prijava_se_odnosi_za">
                     <xs:complexType>
                         <xs:sequence>

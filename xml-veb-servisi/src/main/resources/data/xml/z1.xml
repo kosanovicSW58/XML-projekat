@@ -2,7 +2,7 @@
 <zzpz:Zahtev_za_priznanje_ziga xmlns:tip="http://www.ftn-intelektualna-svojina.rs/tipovi"
  xmlns:zzpz="http://www.ftn-intelektualna-svojina.rs/ZahtevZaPriznanjeZiga"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.ftn-intelektualna-svojina.rs/ZahtevZaPriznanjeZiga file:/Users/uross/Desktop/4.%20godina/7.%20semestar/XML%20i%20Web%20Servisi/Projekat/Prva%20Kontrolna%20Tacka/z1.xsd">
+ xsi:schemaLocation="http://www.ftn-intelektualna-svojina.rs/ZahtevZaPriznanjeZiga file:/Users/uross/Desktop/4.%20godina/7.%20semestar/XML%20i%20Web%20Servisi/Projekat/XML-projekat/xml-veb-servisi/src/main/resources/data/xsd/z1.xsd">
     <zzpz:Podaci_o_instituciji>
         <zzpz:Institucija>Institucija0</zzpz:Institucija>
         <zzpz:Adresa>
@@ -15,58 +15,64 @@
             <tip:Drzava>Drzava0</tip:Drzava>
         </zzpz:Adresa>
     </zzpz:Podaci_o_instituciji>
-    <zzpz:Podaci_o_podnosiocu_prijave_firma>
-        <tip:Adresa>
-            <tip:Ulica>
-                <tip:Naziv>Naziv1</tip:Naziv>
-                <tip:Broj>50</tip:Broj>
-            </tip:Ulica>
-            <tip:Postanski_broj>25500</tip:Postanski_broj>
-            <tip:Mesto>Mesto1</tip:Mesto>
-            <tip:Drzava>Drzava1</tip:Drzava>
-        </tip:Adresa>
-        <tip:Kontakt>
-            <tip:Telefon>0000000</tip:Telefon>
-            <tip:Email>+@-.-</tip:Email>
-            <tip:Faks>0000000</tip:Faks>
-        </tip:Kontakt>
-        <tip:Ime_firme>Ime_firme0</tip:Ime_firme>
-    </zzpz:Podaci_o_podnosiocu_prijave_firma>
-    <zzpz:Podaci_o_punomocniku_firma>
-        <tip:Adresa>
-            <tip:Ulica>
-                <tip:Naziv>Naziv2</tip:Naziv>
-                <tip:Broj>50</tip:Broj>
-            </tip:Ulica>
-            <tip:Postanski_broj>25500</tip:Postanski_broj>
-            <tip:Mesto>Mesto2</tip:Mesto>
-            <tip:Drzava>Drzava2</tip:Drzava>
-        </tip:Adresa>
-        <tip:Kontakt>
-            <tip:Telefon>0000000</tip:Telefon>
-            <tip:Email>+@-.-</tip:Email>
-            <tip:Faks>0000000</tip:Faks>
-        </tip:Kontakt>
-        <tip:Ime_firme>Ime_firme1</tip:Ime_firme>
-    </zzpz:Podaci_o_punomocniku_firma>
-    <zzpz:Podaci_o_zajednickom_predstavniku_osoba>
-        <tip:Adresa>
-            <tip:Ulica>
-                <tip:Naziv>Naziv3</tip:Naziv>
-                <tip:Broj>50</tip:Broj>
-            </tip:Ulica>
-            <tip:Postanski_broj>25500</tip:Postanski_broj>
-            <tip:Mesto>Mesto3</tip:Mesto>
-            <tip:Drzava>Drzava3</tip:Drzava>
-        </tip:Adresa>
-        <tip:Kontakt>
-            <tip:Telefon>0000000</tip:Telefon>
-            <tip:Email>+@-.-</tip:Email>
-            <tip:Faks>0000000</tip:Faks>
-        </tip:Kontakt>
-        <tip:Ime>Ime0</tip:Ime>
-        <tip:Prezime>Prezime0</tip:Prezime>
-    </zzpz:Podaci_o_zajednickom_predstavniku_osoba>
+    <zzpz:Podaci_o_podnosiocu_prijave>
+        <zzpz:Podaci_o_podnosiocu_prijave_firma>
+            <tip:Adresa>
+                <tip:Ulica>
+                    <tip:Naziv>Naziv1</tip:Naziv>
+                    <tip:Broj>50</tip:Broj>
+                </tip:Ulica>
+                <tip:Postanski_broj>25500</tip:Postanski_broj>
+                <tip:Mesto>Mesto1</tip:Mesto>
+                <tip:Drzava>Drzava1</tip:Drzava>
+            </tip:Adresa>
+            <tip:Kontakt>
+                <tip:Telefon>0000000</tip:Telefon>
+                <tip:Email>+@-.-</tip:Email>
+                <tip:Faks>0000000</tip:Faks>
+            </tip:Kontakt>
+            <tip:Ime_firme>Ime_firme0</tip:Ime_firme>
+        </zzpz:Podaci_o_podnosiocu_prijave_firma>
+    </zzpz:Podaci_o_podnosiocu_prijave>
+    <zzpz:Podaci_o_punomocniku>
+        <zzpz:Podaci_o_punomocniku_firma>
+            <tip:Adresa>
+                <tip:Ulica>
+                    <tip:Naziv>Naziv2</tip:Naziv>
+                    <tip:Broj>50</tip:Broj>
+                </tip:Ulica>
+                <tip:Postanski_broj>25500</tip:Postanski_broj>
+                <tip:Mesto>Mesto2</tip:Mesto>
+                <tip:Drzava>Drzava2</tip:Drzava>
+            </tip:Adresa>
+            <tip:Kontakt>
+                <tip:Telefon>0000000</tip:Telefon>
+                <tip:Email>+@-.-</tip:Email>
+                <tip:Faks>0000000</tip:Faks>
+            </tip:Kontakt>
+            <tip:Ime_firme>Ime_firme1</tip:Ime_firme>
+        </zzpz:Podaci_o_punomocniku_firma>
+    </zzpz:Podaci_o_punomocniku>
+    <zzpz:Podaci_o_zajednickom_predstavniku>
+        <zzpz:Podaci_o_zajednickom_predstavniku_osoba>
+            <tip:Adresa>
+                <tip:Ulica>
+                    <tip:Naziv>Naziv3</tip:Naziv>
+                    <tip:Broj>50</tip:Broj>
+                </tip:Ulica>
+                <tip:Postanski_broj>25500</tip:Postanski_broj>
+                <tip:Mesto>Mesto3</tip:Mesto>
+                <tip:Drzava>Drzava3</tip:Drzava>
+            </tip:Adresa>
+            <tip:Kontakt>
+                <tip:Telefon>0000000</tip:Telefon>
+                <tip:Email>+@-.-</tip:Email>
+                <tip:Faks>0000000</tip:Faks>
+            </tip:Kontakt>
+            <tip:Ime>Ime0</tip:Ime>
+            <tip:Prezime>Prezime0</tip:Prezime>
+        </zzpz:Podaci_o_zajednickom_predstavniku_osoba>
+    </zzpz:Podaci_o_zajednickom_predstavniku>
     <zzpz:Prijava_se_odnosi_za>
         <zzpz:A>individualni zig</zzpz:A>
         <zzpz:B>verbalni znak (znak u reci)</zzpz:B>

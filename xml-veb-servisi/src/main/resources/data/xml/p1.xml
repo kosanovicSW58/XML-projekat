@@ -2,28 +2,32 @@
 <zzpp:Zahtev_za_priznanje_patenta xmlns:tip="http://www.ftn-intelektualna-svojina.rs/tipovi"
  xmlns:zzpp="http://www.ftn-intelektualna-svojina.rs/ZahtevZaPriznanjePatenta"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.ftn-intelektualna-svojina.rs/ZahtevZaPriznanjePatenta file:/E:/ProjekatXML/p1.xsd">
+ xsi:schemaLocation="http://www.ftn-intelektualna-svojina.rs/ZahtevZaPriznanjePatenta file:/Users/uross/Desktop/4.%20godina/7.%20semestar/XML%20i%20Web%20Servisi/Projekat/XML-projekat/xml-veb-servisi/src/main/resources/data/xsd/p1.xsd">
     <zzpp:Naziv_pronalaska>
         <zzpp:Na_srpskom>Na_srpskom0</zzpp:Na_srpskom>
         <zzpp:Na_engleskom>Na_engleskom0</zzpp:Na_engleskom>
     </zzpp:Naziv_pronalaska>
-    <zzpp:Podaci_o_podnosiocu_prijave_firma>
-        <tip:Adresa>
-            <tip:Ulica>
-                <tip:Naziv>Naziv0</tip:Naziv>
-                <tip:Broj>50</tip:Broj>
-            </tip:Ulica>
-            <tip:Postanski_broj>25500</tip:Postanski_broj>
-            <tip:Mesto>Mesto0</tip:Mesto>
-            <tip:Drzava>Drzava0</tip:Drzava>
-        </tip:Adresa>
-        <tip:Kontakt>
-            <tip:Telefon>0000000</tip:Telefon>
-            <tip:Email>+@-.-</tip:Email>
-            <tip:Faks>0000000</tip:Faks>
-        </tip:Kontakt>
-        <tip:Ime_firme>Ime_firme0</tip:Ime_firme>
-    </zzpp:Podaci_o_podnosiocu_prijave_firma>
+    <zzpp:Podaci_o_podnosiocu_prijave>
+        <zzpp:Podaci_o_podnosiocu_prijave_osoba>
+            <tip:Adresa>
+                <tip:Ulica>
+                    <tip:Naziv>Naziv0</tip:Naziv>
+                    <tip:Broj>50</tip:Broj>
+                </tip:Ulica>
+                <tip:Postanski_broj>25500</tip:Postanski_broj>
+                <tip:Mesto>Mesto0</tip:Mesto>
+                <tip:Drzava>Drzava0</tip:Drzava>
+            </tip:Adresa>
+            <tip:Kontakt>
+                <tip:Telefon>0000000</tip:Telefon>
+                <tip:Email>+@-.-</tip:Email>
+                <tip:Faks>0000000</tip:Faks>
+            </tip:Kontakt>
+            <tip:Ime>Ime0</tip:Ime>
+            <tip:Prezime>Prezime0</tip:Prezime>
+            <zzpp:Drzavljanstvo>SRB</zzpp:Drzavljanstvo>
+        </zzpp:Podaci_o_podnosiocu_prijave_osoba>
+    </zzpp:Podaci_o_podnosiocu_prijave>
     <zzpp:Podaci_o_pronalazacu>
         <tip:Adresa>
             <tip:Ulica>
@@ -39,24 +43,25 @@
             <tip:Email>+@-.-</tip:Email>
             <tip:Faks>0000000</tip:Faks>
         </tip:Kontakt>
-        <tip:Ime>Ime0</tip:Ime>
-        <tip:Prezime>Prezime0</tip:Prezime>
-    </zzpp:Podaci_o_pronalazacu>
-    <zzpp:Podaci_o_punomocniku_za_zastupanje>
-        <tip:Adresa>
-            <tip:Ulica>
-                <tip:Naziv>Naziv2</tip:Naziv>
-                <tip:Broj>50</tip:Broj>
-            </tip:Ulica>
-            <tip:Postanski_broj>25500</tip:Postanski_broj>
-            <tip:Mesto>Mesto2</tip:Mesto>
-        </tip:Adresa>
-        <tip:Kontakt>
-            <tip:Telefon>0000000</tip:Telefon>
-            <tip:Email>+@-.-</tip:Email>
-        </tip:Kontakt>
         <tip:Ime>Ime1</tip:Ime>
         <tip:Prezime>Prezime1</tip:Prezime>
+    </zzpp:Podaci_o_pronalazacu>
+    <zzpp:Podaci_o_punomocniku_za_zastupanje>
+        <zzpp:Podaci_o_punomocniku_za_zastupanje_firma>
+            <tip:Adresa>
+                <tip:Ulica>
+                    <tip:Naziv>Naziv2</tip:Naziv>
+                    <tip:Broj>50</tip:Broj>
+                </tip:Ulica>
+                <tip:Postanski_broj>25500</tip:Postanski_broj>
+                <tip:Mesto>Mesto2</tip:Mesto>
+            </tip:Adresa>
+            <tip:Kontakt>
+                <tip:Telefon>0000000</tip:Telefon>
+                <tip:Email>+@-.-</tip:Email>
+            </tip:Kontakt>
+            <tip:Ime_firme>Ime_firme0</tip:Ime_firme>
+        </zzpp:Podaci_o_punomocniku_za_zastupanje_firma>
     </zzpp:Podaci_o_punomocniku_za_zastupanje>
     <zzpp:Podaci_o_adresi_za_dostavljanje>
         <tip:Ulica>
@@ -68,9 +73,9 @@
     </zzpp:Podaci_o_adresi_za_dostavljanje>
     <zzpp:Nacin_dostavljanja>elektronski</zzpp:Nacin_dostavljanja>
     <zzpp:Prijava>
-        <zzpp:Izdvojena_prijava>
+        <zzpp:Dopunska_prijava>
             <tip:Broj_prijave>50</tip:Broj_prijave>
             <tip:Datum_prijave>2006-05-04</tip:Datum_prijave>
-        </zzpp:Izdvojena_prijava>
+        </zzpp:Dopunska_prijava>
     </zzpp:Prijava>
 </zzpp:Zahtev_za_priznanje_patenta>

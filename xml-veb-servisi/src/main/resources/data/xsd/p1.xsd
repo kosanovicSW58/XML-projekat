@@ -30,15 +30,17 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:choice>
-                    <xs:element name="Podaci_o_podnosiocu_prijave_osoba">
-                        <xs:complexType>
-                            <xs:complexContent>
-                                <xs:extension base="tip:Licni_podaci_osoba">
-                                    <xs:sequence>
-                                        <xs:element name="Drzavljanstvo">
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
+                <xs:element name="Podaci_o_podnosiocu_prijave">
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element name="Podaci_o_podnosiocu_prijave_osoba">
+                                <xs:complexType>
+                                    <xs:complexContent>
+                                        <xs:extension base="tip:Licni_podaci_osoba">
+                                            <xs:sequence>
+                                                <xs:element name="Drzavljanstvo">
+                                                  <xs:simpleType>
+                                                  <xs:restriction base="xs:string">
                                                   <xs:enumeration value="SRB"/>
                                                   <xs:enumeration value="HR"/>
                                                   <xs:enumeration value="BIH"/>
@@ -47,24 +49,30 @@
                                                   <xs:enumeration value="RUS"/>
                                                   <xs:enumeration value="US"/>
                                                   <xs:enumeration value="UK"/>
-                                                </xs:restriction>
-                                            </xs:simpleType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                </xs:extension>
-                            </xs:complexContent>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="Podaci_o_podnosiocu_prijave_firma"
-                        type="tip:Licni_podaci_firma"/>
-                </xs:choice>
+                                                  </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:extension>
+                                    </xs:complexContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Podaci_o_podnosiocu_prijave_firma"
+                                type="tip:Licni_podaci_firma"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="Podaci_o_pronalazacu" type="tip:Licni_podaci_osoba"/>
-                <xs:choice>
-                    <xs:element name="Podaci_o_punomocniku_za_zastupanje"
-                        type="tip:Licni_podaci_obsoba_jednostavno"/>
-                    <xs:element name="Podaci_o_punomocniku_za_zastupanje_firma"
-                        type="tip:Licni_podaci_firma_jednosavno"/>
-                </xs:choice>
+                <xs:element name="Podaci_o_punomocniku_za_zastupanje">
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element name="Podaci_o_punomocniku_za_zastupanje_osoba"
+                                type="tip:Licni_podaci_obsoba_jednostavno"/>
+                            <xs:element name="Podaci_o_punomocniku_za_zastupanje_firma"
+                                type="tip:Licni_podaci_firma_jednosavno"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="Podaci_o_adresi_za_dostavljanje" type="tip:Adresa_bez_drzave"/>
                 <xs:element maxOccurs="1" minOccurs="1" name="Nacin_dostavljanja">
                     <xs:simpleType>

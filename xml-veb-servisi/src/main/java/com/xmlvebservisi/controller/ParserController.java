@@ -22,16 +22,17 @@ public class ParserController {
     private final ParserService parserService;
 
     @GetMapping(value = "/{document_name}",produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> parseDocument(@PathVariable("document_name") String documentName) throws ParserConfigurationException, IOException, SAXException {
-        parserService.readDocument(documentName);
+    public ResponseEntity<String> parseDocument(@PathVariable("document_name") String documentName) throws Exception {
+        return parserService.readDocument(documentName);
+    }
 
-        return ResponseEntity.ok().build();
+    @GetMapping(value = "/validate/{document_name}",produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> validateDocument(@PathVariable("document_name") String documentName) {
+        return parserService.validateDocument(documentName);
     }
 
     @PostMapping(value = "/document_name",consumes = APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> writeDocument(@PathVariable("document_name") String documentName) throws ParserConfigurationException, IOException, SAXException {
-        parserService.writeDocument(documentName);
-
-        return ResponseEntity.ok().build();
+    public ResponseEntity<String> writeDocument(@PathVariable("document_name") String documentName) throws Exception {
+        return parserService.writeDocument(documentName);
     }
 }

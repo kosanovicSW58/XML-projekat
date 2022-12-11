@@ -94,8 +94,6 @@ public final class ParserUtils {
     }
 
     public static void writeXml(Document doc, OutputStream output) throws TransformerException {
-
-
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
 

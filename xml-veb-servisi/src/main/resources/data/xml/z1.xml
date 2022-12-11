@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<Zahtev_za_priznanje_ziga xsi:noNamespaceSchemaLocation="../xsd/z1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Podaci_o_instituciji>
+        <Institucija>string</Institucija>
+        <Adresa>string</Adresa>
+        <Postancki_broj>string</Postancki_broj>
+    </Podaci_o_instituciji>
+    <Podaci_o_podnosiocu_prijave>
+        <Ime>string</Ime>
+        <Prezime>string</Prezime>
+        <Ulica_i_broj>string</Ulica_i_broj>
+        <Postanski_broj>string</Postanski_broj>
+        <Mesto>string</Mesto>
+        <Drzava_prebivalista>string</Drzava_prebivalista>
+        <Telefon>string</Telefon>
+        <Email>string</Email>
+        <Faks>string</Faks>
+    </Podaci_o_podnosiocu_prijave>
+    <Podaci_o_punomocniku>
+        <Ime>string</Ime>
+        <Prezime>string</Prezime>
+        <Ulica_i_broj>string</Ulica_i_broj>
+        <Postanski_broj>string</Postanski_broj>
+        <Mesto>string</Mesto>
+        <Drzava_prebivalista>string</Drzava_prebivalista>
+        <Telefon>string</Telefon>
+        <Email>string</Email>
+        <Faks>string</Faks>
+    </Podaci_o_punomocniku>
+    <Podaci_o_zajednickom_predstavniku>
+        <Ime>string</Ime>
+        <Prezime>string</Prezime>
+        <Ulica_i_broj>string</Ulica_i_broj>
+        <Postanski_broj>string</Postanski_broj>
+        <Mesto>string</Mesto>
+        <Drzava_prebivalista>string</Drzava_prebivalista>
+        <Telefon>string</Telefon>
+        <Email>string</Email>
+        <Faks>string</Faks>
+    </Podaci_o_zajednickom_predstavniku>
+    <Prijava_se_odnosi_za>
+        <A>kolektivni zig</A>
+        <B>kombinovani znak</B>
+        <V_izgled_znaka>string</V_izgled_znaka>
+    </Prijava_se_odnosi_za>
+    <Naznacenje_boje_ili_boja>string</Naznacenje_boje_ili_boja>
+    <Transliteracija_znaka>string</Transliteracija_znaka>
+    <Prevod_znaka>string</Prevod_znaka>
+    <Opis_znaka>string</Opis_znaka>
+    <Nicanska_klasifikacija>2</Nicanska_klasifikacija>
+    <Nicanska_klasifikacija>20</Nicanska_klasifikacija>
+    <Pravo_prvenstva_i_osnov>string</Pravo_prvenstva_i_osnov>
+    <Placene_takse>
+        <Osnovna_taksa>1517</Osnovna_taksa>
+        <Za___klasa>-2413</Za___klasa>
+        <Za_graficko_resenje>-653</Za_graficko_resenje>
+        <Ukupno>-2814</Ukupno>
+    </Placene_takse>
+    <Popunjava_zavod>
+        <Prilozi_uz_zahtev>Opsti akt o kolektivnom zigu/zigu garancije</Prilozi_uz_zahtev>
+    </Popunjava_zavod>
+    <Broj_prijave_ziga>
+        <Prvi>3320</Prvi>
+        <Drugi>103</Drugi>
+    </Broj_prijave_ziga>
+    <Datum_podnosenja>1976-06-03</Datum_podnosenja>
+</Zahtev_za_priznanje_ziga>

@@ -1,20 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.ftn-intelektualna-svojina.rs/ZahtevZaPriznanjeZiga"
+    xmlns:tip="http://www.ftn-intelektualna-svojina.rs/tipovi"
+    xmlns:zzpz="http://www.ftn-intelektualna-svojina.rs/ZahtevZaPriznanjeZiga">
+    <xs:import namespace="http://www.ftn-intelektualna-svojina.rs/tipovi"
+        schemaLocation="tipovi.xsd"/>
     <xs:element name="Zahtev_za_priznanje_ziga">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="Podaci_o_instituciji">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="Institucija" type="xs:string"/>
-                            <xs:element name="Adresa" type="xs:string"/>
-                            <xs:element name="Postancki_broj" type="xs:string"/>
+                            <xs:element name="Institucija">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="2"/>
+                                        <xs:maxLength value="20"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Adresa" type="tip:Adresa"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="Podaci_o_podnosiocu_prijave" type="TLice"> </xs:element>
-                <xs:element name="Podaci_o_punomocniku" type="TLice"> </xs:element>
-                <xs:element name="Podaci_o_zajednickom_predstavniku" type="TLice"> </xs:element>
+                <xs:choice>
+                    <xs:element name="Podaci_o_podnosiocu_prijave_osoba"
+                        type="tip:Licni_podaci_osoba"> </xs:element>
+                    <xs:element name="Podaci_o_podnosiocu_prijave_firma"
+                        type="tip:Licni_podaci_firma"/>
+                </xs:choice>
+                <xs:choice>
+                    <xs:element name="Podaci_o_punomocniku_osoba" type="tip:Licni_podaci_osoba"/>
+                    <xs:element name="Podaci_o_punomocniku_firma" type="tip:Licni_podaci_firma"/>
+                </xs:choice>
+                <xs:choice>
+                    <xs:element name="Podaci_o_zajednickom_predstavniku_osoba"
+                        type="tip:Licni_podaci_osoba"> </xs:element>
+                    <xs:element name="Podaci_o_zajednickom_predstavniku_firma"
+                        type="tip:Licni_podaci_firma"/>
+                </xs:choice>
                 <xs:element name="Prijava_se_odnosi_za">
                     <xs:complexType>
                         <xs:sequence>
@@ -39,7 +63,6 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="V_izgled_znaka" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -102,10 +125,17 @@
                 <xs:element name="Placene_takse">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="Osnovna_taksa" type="xs:int"/>
+                            <xs:element name="Osnovna_taksa">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:int">
+                                        <xs:minInclusive value="0"/>
+                                        <xs:maxInclusive value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
                             <xs:element name="Za___klasa" type="xs:int"/>
                             <xs:element name="Za_graficko_resenje" type="xs:int"/>
-                            <xs:element name="Ukupno" type="xs:int"/>
+                            <xs:element name="Ukupno" type="xs:double"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -128,32 +158,26 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
+                            <xs:element name="Broj_prijave_ziga">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Godina" type="xs:gYear"/>
+                                        <xs:element name="Broj">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:int">
+                                                  <xs:minInclusive value="0000"/>
+                                                  <xs:maxInclusive value="9999"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Datum_podnosenja" type="xs:date"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="Broj_prijave_ziga">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Prvi" type="xs:int"/>
-                            <xs:element name="Drugi" type="xs:int"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="Datum_podnosenja" type="xs:date"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:complexType abstract="false" name="TLice">
-        <xs:sequence>
-            <xs:element name="Ime" type="xs:string"/>
-            <xs:element name="Prezime" type="xs:string"/>
-            <xs:element name="Ulica_i_broj" type="xs:string"/>
-            <xs:element name="Postanski_broj" type="xs:string"/>
-            <xs:element name="Mesto" type="xs:string"/>
-            <xs:element name="Drzava_prebivalista" type="xs:string"/>
-            <xs:element name="Telefon" type="xs:string"/>
-            <xs:element name="Email" type="xs:string"/>
-            <xs:element name="Faks" type="xs:string"/>
-        </xs:sequence>
-    </xs:complexType>
 </xs:schema>

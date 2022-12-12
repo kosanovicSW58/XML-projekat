@@ -6,8 +6,8 @@ import com.xmlvebservisi.util.ParserUtils;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
@@ -15,6 +15,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
+
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
@@ -51,16 +52,27 @@ public class ParserService {
         try {
             File file = new File(String.format("%s%s.xml",XML_PATH,documentName));
 
-            JAXBContext jaxbContext = JAXBContext.newInstance(ZahtevZaUnosenjeUEvidenciju.class);
-            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-
-            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
             Adresa adresa = new Adresa();
-            adresa.setMesto("MESTO09");
+            adresa.setMesto("Novi Sad");
+            adresa.setPostanskiBroj(21000);
+            adresa.setDrzava("Srbija");
+            Adresa.Ulica ulica = new Adresa.Ulica();
+            ulica.setBroj(14);
+            ulica.setNaziv("Njegoseva");
+            adresa.setUlica(ulica);
 
-            Object o = jaxbMarshaller.getNode(Adresa.class);
-            o = (Adresa)o;
+            ZahtevZaUnosenjeUEvidenciju zahtevZaUnosenjeUEvidenciju = null;
+            JAXBContext jaxbContext = JAXBContext.newInstance(ZahtevZaUnosenjeUEvidenciju.class);
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            zahtevZaUnosenjeUEvidenciju = (ZahtevZaUnosenjeUEvidenciju) jaxbUnmarshaller.unmarshal(file);
+            zahtevZaUnosenjeUEvidenciju.getPodaciOPodnosiocu().getPodaciOPodnosiocuOsoba().setAdresa(adresa);
+
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            jaxbMarshaller.marshal(zahtevZaUnosenjeUEvidenciju, file);
+
+
+
 //            System.out.println(((Adresa) o).getMesto());
 
 //            jaxbMarshaller.marshal(adresa,file);

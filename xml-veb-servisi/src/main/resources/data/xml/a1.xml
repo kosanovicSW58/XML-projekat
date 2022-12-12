@@ -42,34 +42,14 @@
     <zzue:Podaci_o_vrsti_autorskog_dela>knjizevno delo</zzue:Podaci_o_vrsti_autorskog_dela>
     <zzue:Podaci_o_formi_zapisa>stampani tekst</zzue:Podaci_o_formi_zapisa>
     <zzue:Podaci_o_autoru>
-        <zzue:Podaci_o_autoru_osoba>
+        <zzue:Podaci_o_preminulom_autoru>
             <zzue:Ime>Ime0</zzue:Ime>
-            <zzue:Prezime>Prezime0</zzue:Prezime>
-            <zzue:Adresa>
-                <tip:Ulica>
-                    <tip:Naziv>Naziv2</tip:Naziv>
-                    <tip:Broj>50</tip:Broj>
-                </tip:Ulica>
-                <tip:Postanski_broj>25500</tip:Postanski_broj>
-                <tip:Mesto>Mesto2</tip:Mesto>
-                <tip:Drzava>Drzava2</tip:Drzava>
-            </zzue:Adresa>
-            <zzue:Drzavljanstvo>SRB</zzue:Drzavljanstvo>
-        </zzue:Podaci_o_autoru_osoba>
-        <zzue:Podaci_o_autoru_osoba>
+            <zzue:Godina_smrti>2006-05-04</zzue:Godina_smrti>
+        </zzue:Podaci_o_preminulom_autoru>
+        <zzue:Podaci_o_preminulom_autoru>
             <zzue:Ime>Ime1</zzue:Ime>
-            <zzue:Prezime>Prezime1</zzue:Prezime>
-            <zzue:Adresa>
-                <tip:Ulica>
-                    <tip:Naziv>Naziv3</tip:Naziv>
-                    <tip:Broj>50</tip:Broj>
-                </tip:Ulica>
-                <tip:Postanski_broj>25500</tip:Postanski_broj>
-                <tip:Mesto>Mesto3</tip:Mesto>
-                <tip:Drzava>Drzava3</tip:Drzava>
-            </zzue:Adresa>
-            <zzue:Drzavljanstvo>SRB</zzue:Drzavljanstvo>
-        </zzue:Podaci_o_autoru_osoba>
+            <zzue:Godina_smrti>2006-05-04</zzue:Godina_smrti>
+        </zzue:Podaci_o_preminulom_autoru>
     </zzue:Podaci_o_autoru>
     <zzue:Da_li_je_delo_stvoreno_u_radnom_odnosu>false</zzue:Da_li_je_delo_stvoreno_u_radnom_odnosu>
     <zzue:Nacin_koriscenja_autorskog_dela>Nacin_koriscenja_autorskog_dela0</zzue:Nacin_koriscenja_autorskog_dela>

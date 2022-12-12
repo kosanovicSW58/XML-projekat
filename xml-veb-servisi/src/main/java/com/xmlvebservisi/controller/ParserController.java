@@ -1,16 +1,15 @@
 package com.xmlvebservisi.controller;
 
+import com.xmlvebservisi.dto.SingleTagDto;
 import com.xmlvebservisi.service.ParserService;
-import java.io.IOException;
-import javax.xml.parsers.ParserConfigurationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.xml.sax.SAXException;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -31,8 +30,8 @@ public class ParserController {
         return parserService.validateDocument(documentName);
     }
 
-    @PostMapping(value = "/document_name",consumes = APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/write/{document_name}",produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<String> writeDocument(@PathVariable("document_name") String documentName) throws Exception {
-        return parserService.writeDocument(documentName);
+        return parserService.writeDocument(documentName,null);
     }
 }

@@ -2,6 +2,7 @@ package com.xmlvebservisi.service;
 
 import com.xmlvebservisi.dto.SingleTagDto;
 import com.xmlvebservisi.handler.SAXSchemaHandler;
+import com.xmlvebservisi.repository.StoreAndRetrieveXML;
 import com.xmlvebservisi.util.ParserUtils;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -123,5 +124,18 @@ public class ParserService {
 
     boolean validateDocumentName(String documentName){
         return StringUtils.equals(documentName, "z1") || StringUtils.equals(documentName, "a1") || StringUtils.equals(documentName, "p1");
+    }
+
+    //Test Store and Retrieve
+    public ResponseEntity<String> storeXML() throws Exception {
+        String[] args = {"/db/sample/library", "a1.xml", "src/main/resources/data/xml/a1.xml"};
+        StoreAndRetrieveXML.store(args);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    public ResponseEntity<String> retrieveXML() throws Exception {
+        String[] args = {"/db/sample/library", "a1.xml"};
+        StoreAndRetrieveXML.retrieve(args);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

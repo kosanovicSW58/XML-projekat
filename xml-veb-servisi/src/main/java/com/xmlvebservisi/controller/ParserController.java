@@ -34,4 +34,14 @@ public class ParserController {
     public ResponseEntity<String> writeDocument(@PathVariable("document_name") String documentName) throws Exception {
         return parserService.writeDocument(documentName,null);
     }
+
+    @GetMapping(value = "/test/store", produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> storeDocument() throws Exception {
+        return parserService.storeXML();
+    }
+
+    @GetMapping(value = "/test/retrieve", produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> retrieveDocument() throws Exception {
+        return parserService.retrieveXML();
+    }
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.http.MediaType.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -30,5 +30,15 @@ public class ParserController {
     @GetMapping(value = "/write/{document_name}",produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<String> writeDocument(@PathVariable("document_name") String documentName) {
         return parserService.writeDocument(documentName);
+    }
+
+    @PostMapping(value = "/test/store/{document_name}", produces = APPLICATION_XML_VALUE)
+    public ResponseEntity<String> storeDocument(@PathVariable("document_name") String documentName) throws Exception {
+        return parserService.storeXML(documentName);
+    }
+
+    @GetMapping(value = "/test/retrieve/{document_name}", produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> retrieveDocument(@PathVariable("document_name") String documentName) throws Exception {
+        return parserService.retrieveXML(documentName);
     }
 }

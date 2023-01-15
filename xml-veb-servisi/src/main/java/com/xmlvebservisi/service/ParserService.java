@@ -1,6 +1,7 @@
 package com.xmlvebservisi.service;
 
 import com.xmlvebservisi.handler.SAXSchemaHandler;
+import com.xmlvebservisi.repository.StoreAndRetrieveXML;
 import com.xmlvebservisi.util.ParserUtils;
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +15,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -94,5 +96,18 @@ public class ParserService {
         DocumentBuilder builder = factory.newDocumentBuilder();
 
         return builder.parse(file);
+    }
+
+    //Store and Retrieve
+    public ResponseEntity<String> storeXML(String documentName) throws Exception {
+        String[] args = {"/db/sample/library", documentName + ".xml", "src/main/resources/data/xml/" + documentName + ".xml"};
+        StoreAndRetrieveXML.store(args);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    public ResponseEntity<String> retrieveXML(String documentName) throws Exception {
+        String[] args = {"/db/sample/library", documentName + ".xml"};
+        StoreAndRetrieveXML.retrieve(args);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

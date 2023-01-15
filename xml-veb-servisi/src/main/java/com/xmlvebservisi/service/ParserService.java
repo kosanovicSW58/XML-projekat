@@ -126,15 +126,15 @@ public class ParserService {
         return StringUtils.equals(documentName, "z1") || StringUtils.equals(documentName, "a1") || StringUtils.equals(documentName, "p1");
     }
 
-    //Test Store and Retrieve
-    public ResponseEntity<String> storeXML() throws Exception {
-        String[] args = {"/db/sample/library", "a1.xml", "src/main/resources/data/xml/a1.xml"};
+    //Store and Retrieve
+    public ResponseEntity<String> storeXML(String documentName) throws Exception {
+        String[] args = {"/db/sample/library", documentName + ".xml", "src/main/resources/data/xml/" + documentName + ".xml"};
         StoreAndRetrieveXML.store(args);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    public ResponseEntity<String> retrieveXML() throws Exception {
-        String[] args = {"/db/sample/library", "a1.xml"};
+    public ResponseEntity<String> retrieveXML(String documentName) throws Exception {
+        String[] args = {"/db/sample/library", documentName + ".xml"};
         StoreAndRetrieveXML.retrieve(args);
         return new ResponseEntity<>(HttpStatus.OK);
     }

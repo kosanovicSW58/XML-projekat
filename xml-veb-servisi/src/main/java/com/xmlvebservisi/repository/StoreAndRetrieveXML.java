@@ -43,7 +43,7 @@ public class StoreAndRetrieveXML {
             System.out.println("[INFO] Using defaults.");
 
             collectionId = "/db/sample/library";
-            documentId = "1.xml";
+            documentId = "a1.xml";
         }
 
         System.out.println("\t- collection ID: " + collectionId);
@@ -121,9 +121,9 @@ public class StoreAndRetrieveXML {
             System.out.println("[INFO] Using defaults.");
 
             collectionId = "/db/sample/library";
-            documentId = "1.xml";
+            documentId = "a1.xml";
 
-            filePath = "data/books.xml";
+            filePath = "data/xml/a1.xml";
 
         }
 

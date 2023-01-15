@@ -6,11 +6,16 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Result;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.sax.SAXResult;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +28,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 import static com.xmlvebservisi.util.ParserUtils.validateDocumentName;
@@ -35,7 +41,10 @@ public class GeneratorService {
     private static final String XSL_FILE_PATH = RESOURCES_PATH + "data/xsl/%s.xsl";
     private static final String XML_FILE_PATH = RESOURCES_PATH + "data/xml/%s.xml";
     private static final String PDF_FILE_PATH = RESOURCES_PATH + "data/pdf/%s.pdf";
+    private static final String HTML_FILE_PATH = RESOURCES_PATH + "data/html/%s.html";
+    private static final String XHTML_FILE_PATH = RESOURCES_PATH + "data/xhtml/%s.xsl";
     private static final String FOP_CONF_PATH = RESOURCES_PATH + "fop.xconf";
+    private static DocumentBuilderFactory documentBuilderFactory;
 
     public ResponseEntity<String> generatePdfFromDocument(String documentName) throws IOException, SAXException {
         if(validateDocumentName(documentName)){
@@ -85,7 +94,52 @@ public class GeneratorService {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    public ResponseEntity<String> generateXhtmlFromDocument(String documentName) {
-        return null;
+    public ResponseEntity<String> generateHtmlFromDocument(String documentName) {
+            if(validateDocumentName(documentName)){
+                return new ResponseEntity<>("Invalid document name", HttpStatus.BAD_REQUEST);
+            }
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+
+            String xhtmlFilePath = String.format(XHTML_FILE_PATH,documentName);
+            String xmlFilePath = String.format(XML_FILE_PATH,documentName);
+            String htmlFilePath = String.format(HTML_FILE_PATH,documentName);
+
+            try {
+                StreamSource transformSource = new StreamSource(new File(xhtmlFilePath));
+                Transformer transformer = transformerFactory.newTransformer(transformSource);
+                transformer.setOutputProperty("{http://xml.apache.org/xalan}indent-amount", "2");
+                transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+                // Generate XHTML
+                transformer.setOutputProperty(OutputKeys.METHOD, "xhtml");
+
+                // Transform DOM to HTML
+                DOMSource source = new DOMSource(buildDocument(xmlFilePath));
+                StreamResult result = new StreamResult(new FileOutputStream(htmlFilePath));
+                transformer.transform(source, result);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    public Document buildDocument(String filePath) {
+        documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        documentBuilderFactory.setNamespaceAware(true);
+        documentBuilderFactory.setIgnoringComments(true);
+        documentBuilderFactory.setIgnoringElementContentWhitespace(true);
+
+        Document document;
+        try {
+            DocumentBuilder builder = documentBuilderFactory.newDocumentBuilder();
+            document = builder.parse(new File(filePath));
+            if (document != null)
+                System.out.println("[INFO] File parsed with no errors.");
+            else
+                System.out.println("[WARN] Document is null.");
+        } catch (Exception e) {
+            return null;
+        }
+        return document;
     }
 }

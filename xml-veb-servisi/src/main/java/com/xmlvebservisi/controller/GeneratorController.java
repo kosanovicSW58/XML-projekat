@@ -24,8 +24,8 @@ public class GeneratorController {
         return generatorService.generatePdfFromDocument(documentName);
     }
 
-    @GetMapping(value = "/xhtml/{document_name}",produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> generateXhtmlFromDocument(@PathVariable("document_name") String documentName) {
-        return generatorService.generateXhtmlFromDocument(documentName);
+    @GetMapping(value = "/html/{document_name}",produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> generateHtmlFromDocument(@PathVariable("document_name") String documentName) {
+        return generatorService.generateHtmlFromDocument(documentName);
     }
 }

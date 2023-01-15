@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<zzue:Zahtev_za_unosenje_u_evidenciju xmlns:tip="http://www.ftn-intelektualna-svojina.rs/tipovi"
- xmlns:zzue="http://www.ftn-intelektualna-svojina.rs/ZahtevZaUnosenjeUEvidenciju"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.ftn-intelektualna-svojina.rs/ZahtevZaUnosenjeUEvidenciju file:/Users/uross/Desktop/4.%20godina/7.%20semestar/XML%20i%20Web%20Servisi/Projekat/XML-projekat/xml-veb-servisi/src/main/resources/data/xsd/a1.xsd">
-    <zzue:Podaci_o_podnosiocu>
-        <zzue:Podaci_o_podnosiocu_osoba>
-            <tip:Adresa>
-                <tip:Ulica>
-                    <tip:Naziv>Naziv0</tip:Naziv>
-                    <tip:Broj>50</tip:Broj>
-                </tip:Ulica>
-                <tip:Postanski_broj>25500</tip:Postanski_broj>
-                <tip:Mesto>Mesto0</tip:Mesto>
-                <tip:Drzava>Drzava0</tip:Drzava>
-            </tip:Adresa>
-            <tip:Kontakt>
-                <tip:Telefon>0000000</tip:Telefon>
-                <tip:Email>+@-.-</tip:Email>
-                <tip:Faks>0000000</tip:Faks>
-            </tip:Kontakt>
-            <tip:Ime>Ime0</tip:Ime>
-            <tip:Prezime>Prezime0</tip:Prezime>
-            <tip:Drzavljanstvo>SRB</tip:Drzavljanstvo>
-        </zzue:Podaci_o_podnosiocu_osoba>
-    </zzue:Podaci_o_podnosiocu>
-    <zzue:Pseudonim_ili_znak_autora>Pseudonim_ili_znak_a</zzue:Pseudonim_ili_znak_autora>
-    <zzue:Podaci_o_punomocniku>
-        <tip:Adresa>
-            <tip:Ulica>
-                <tip:Naziv>Naziv1</tip:Naziv>
-                <tip:Broj>50</tip:Broj>
-            </tip:Ulica>
-            <tip:Postanski_broj>25500</tip:Postanski_broj>
-            <tip:Mesto>Mesto1</tip:Mesto>
-            <tip:Drzava>Drzava1</tip:Drzava>
-        </tip:Adresa>
-        <tip:Ime>Ime1</tip:Ime>
-        <tip:Prezime>Prezime1</tip:Prezime>
-    </zzue:Podaci_o_punomocniku>
-    <zzue:Naslov_autorskog_dela>Naslov_autorskog_dela0</zzue:Naslov_autorskog_dela>
-    <zzue:Podaci_o_vrsti_autorskog_dela>knjizevno delo</zzue:Podaci_o_vrsti_autorskog_dela>
-    <zzue:Podaci_o_formi_zapisa>stampani tekst</zzue:Podaci_o_formi_zapisa>
-    <zzue:Podaci_o_autoru>
-        <zzue:Podaci_o_preminulom_autoru>
-            <zzue:Ime>Ime0</zzue:Ime>
-            <zzue:Godina_smrti>2006-05-04</zzue:Godina_smrti>
-        </zzue:Podaci_o_preminulom_autoru>
-        <zzue:Podaci_o_preminulom_autoru>
-            <zzue:Ime>Ime1</zzue:Ime>
-            <zzue:Godina_smrti>2006-05-04</zzue:Godina_smrti>
-        </zzue:Podaci_o_preminulom_autoru>
-    </zzue:Podaci_o_autoru>
-    <zzue:Da_li_je_delo_stvoreno_u_radnom_odnosu>false</zzue:Da_li_je_delo_stvoreno_u_radnom_odnosu>
-    <zzue:Nacin_koriscenja_autorskog_dela>Nacin_koriscenja_autorskog_dela0</zzue:Nacin_koriscenja_autorskog_dela>
-    <zzue:Popunjava_zavod>
-        <zzue:Broj_prijave>50</zzue:Broj_prijave>
-        <zzue:Datum_podnosenja>2006-05-04</zzue:Datum_podnosenja>
-    </zzue:Popunjava_zavod>
-</zzue:Zahtev_za_unosenje_u_evidenciju>
+<Zahtev_za_intelektualnu_svojinu
+        xmlns="http://www.ftn.uns.ac.rs/jaxb/a1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.ftn.uns.ac.rs/jaxb/a1 ../xsd/a1.xsd">
+    <Popunjava_podnosilac>
+        <Podnosilac xsi:type="TFizicko_lice">
+            <Adresa>
+                <Ulica>Bulevar Kralja Petra</Ulica>
+                <Broj>201</Broj>
+                <Postanski_broj>11000</Postanski_broj>
+                <Grad>Beograd</Grad>
+                <Drzava>Republika Srbija</Drzava>
+            </Adresa>
+            <Kontakt>
+                <Telefon>0600000000</Telefon>
+                <E_posta>marko@gmail.com</E_posta>
+                <Faks>123-00000-000</Faks>
+            </Kontakt>
+            <Ime>Marko</Ime>
+            <Prezime>Markovic</Prezime>
+            <Drzavljanstvo>srpsko</Drzavljanstvo>
+        </Podnosilac>
+        <Autori>
+            <Anoniman/>
+        </Autori>
+        <AutorskoDelo>
+            <Naslov>Naslov dela 1</Naslov>
+            <Vrsta>vrsta 1</Vrsta>
+            <Forma>forma 1</Forma>
+            <Podaci_o_naslovu_autorskog_dela>
+                <Naslov_autorskog_dela>naslov autorskog dela 2</Naslov_autorskog_dela>
+                <Ime_autora>ime autora 2</Ime_autora>
+            </Podaci_o_naslovu_autorskog_dela>
+            <Stvoreno_u_radnom_odnosu/>
+            <Nacin_koriscenja>nacin koriscenja 1</Nacin_koriscenja>
+        </AutorskoDelo>
+    </Popunjava_podnosilac>
+    <Popunjava_zavod>
+        <Broj_prijave>A-1233</Broj_prijave>
+        <Datum_podnosenja>2004-02-14</Datum_podnosenja>
+        <Prilozi_uz_zahtev>
+            <Opis_autorskog_dela>
+                <Opis_sadrzaja_autorskog_dela>Opisano je delo</Opis_sadrzaja_autorskog_dela>
+                <Naziv_autorskog_dela>naziv dela 3</Naziv_autorskog_dela>
+            </Opis_autorskog_dela>
+            <Primer_autorskog_dela/>
+        </Prilozi_uz_zahtev>
+    </Popunjava_zavod>
+    <Informacija_o_ustanovi>
+        <Adresa>
+            <Ulica>Knjeginje Ljubice</Ulica>
+            <Broj>5</Broj>
+            <Postanski_broj>11000</Postanski_broj>
+            <Grad>Beograd</Grad>
+            <Drzava>Republika Srbija</Drzava>
+        </Adresa>
+        <Naziv>Zavod za intelektualnu svojinu</Naziv>
+    </Informacija_o_ustanovi>
+</Zahtev_za_intelektualnu_svojinu>

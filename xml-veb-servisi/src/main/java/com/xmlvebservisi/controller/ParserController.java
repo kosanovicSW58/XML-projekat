@@ -1,13 +1,10 @@
 package com.xmlvebservisi.controller;
 
-import com.xmlvebservisi.dto.SingleTagDto;
 import com.xmlvebservisi.service.ParserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,7 +28,7 @@ public class ParserController {
     }
 
     @GetMapping(value = "/write/{document_name}",produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> writeDocument(@PathVariable("document_name") String documentName) throws Exception {
-        return parserService.writeDocument(documentName,null);
+    public ResponseEntity<String> writeDocument(@PathVariable("document_name") String documentName) {
+        return parserService.writeDocument(documentName);
     }
 }

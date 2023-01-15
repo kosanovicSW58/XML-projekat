@@ -1,101 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<zzpz:Zahtev_za_priznanje_ziga xmlns:tip="http://www.ftn-intelektualna-svojina.rs/tipovi"
- xmlns:zzpz="http://www.ftn-intelektualna-svojina.rs/ZahtevZaPriznanjeZiga"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.ftn-intelektualna-svojina.rs/ZahtevZaPriznanjeZiga file:/Users/uross/Desktop/4.%20godina/7.%20semestar/XML%20i%20Web%20Servisi/Projekat/XML-projekat/xml-veb-servisi/src/main/resources/data/xsd/z1.xsd">
-    <zzpz:Podaci_o_instituciji>
-        <zzpz:Institucija>Institucija0</zzpz:Institucija>
-        <zzpz:Adresa>
-            <tip:Ulica>
-                <tip:Naziv>Naziv0</tip:Naziv>
-                <tip:Broj>50</tip:Broj>
-            </tip:Ulica>
-            <tip:Postanski_broj>25500</tip:Postanski_broj>
-            <tip:Mesto>Mesto0</tip:Mesto>
-            <tip:Drzava>Drzava0</tip:Drzava>
-        </zzpz:Adresa>
-    </zzpz:Podaci_o_instituciji>
-    <zzpz:Podaci_o_podnosiocu_prijave>
-        <zzpz:Podaci_o_podnosiocu_prijave_firma>
-            <tip:Adresa>
-                <tip:Ulica>
-                    <tip:Naziv>Naziv1</tip:Naziv>
-                    <tip:Broj>50</tip:Broj>
-                </tip:Ulica>
-                <tip:Postanski_broj>25500</tip:Postanski_broj>
-                <tip:Mesto>Mesto1</tip:Mesto>
-                <tip:Drzava>Drzava1</tip:Drzava>
-            </tip:Adresa>
-            <tip:Kontakt>
-                <tip:Telefon>0000000</tip:Telefon>
-                <tip:Email>+@-.-</tip:Email>
-                <tip:Faks>0000000</tip:Faks>
-            </tip:Kontakt>
-            <tip:Ime_firme>Ime_firme0</tip:Ime_firme>
-        </zzpz:Podaci_o_podnosiocu_prijave_firma>
-    </zzpz:Podaci_o_podnosiocu_prijave>
-    <zzpz:Podaci_o_punomocniku>
-        <zzpz:Podaci_o_punomocniku_firma>
-            <tip:Adresa>
-                <tip:Ulica>
-                    <tip:Naziv>Naziv2</tip:Naziv>
-                    <tip:Broj>50</tip:Broj>
-                </tip:Ulica>
-                <tip:Postanski_broj>25500</tip:Postanski_broj>
-                <tip:Mesto>Mesto2</tip:Mesto>
-                <tip:Drzava>Drzava2</tip:Drzava>
-            </tip:Adresa>
-            <tip:Kontakt>
-                <tip:Telefon>0000000</tip:Telefon>
-                <tip:Email>+@-.-</tip:Email>
-                <tip:Faks>0000000</tip:Faks>
-            </tip:Kontakt>
-            <tip:Ime_firme>Ime_firme1</tip:Ime_firme>
-        </zzpz:Podaci_o_punomocniku_firma>
-    </zzpz:Podaci_o_punomocniku>
-    <zzpz:Podaci_o_zajednickom_predstavniku>
-        <zzpz:Podaci_o_zajednickom_predstavniku_osoba>
-            <tip:Adresa>
-                <tip:Ulica>
-                    <tip:Naziv>Naziv3</tip:Naziv>
-                    <tip:Broj>50</tip:Broj>
-                </tip:Ulica>
-                <tip:Postanski_broj>25500</tip:Postanski_broj>
-                <tip:Mesto>Mesto3</tip:Mesto>
-                <tip:Drzava>Drzava3</tip:Drzava>
-            </tip:Adresa>
-            <tip:Kontakt>
-                <tip:Telefon>0000000</tip:Telefon>
-                <tip:Email>+@-.-</tip:Email>
-                <tip:Faks>0000000</tip:Faks>
-            </tip:Kontakt>
-            <tip:Ime>Ime0</tip:Ime>
-            <tip:Prezime>Prezime0</tip:Prezime>
-        </zzpz:Podaci_o_zajednickom_predstavniku_osoba>
-    </zzpz:Podaci_o_zajednickom_predstavniku>
-    <zzpz:Prijava_se_odnosi_za>
-        <zzpz:A>individualni zig</zzpz:A>
-        <zzpz:B>verbalni znak (znak u reci)</zzpz:B>
-    </zzpz:Prijava_se_odnosi_za>
-    <zzpz:Naznacenje_boje_ili_boja>Naznacenje_boje_ili_boja0</zzpz:Naznacenje_boje_ili_boja>
-    <zzpz:Transliteracija_znaka>Transliteracija_znaka0</zzpz:Transliteracija_znaka>
-    <zzpz:Prevod_znaka>Prevod_znaka0</zzpz:Prevod_znaka>
-    <zzpz:Opis_znaka>Opis_znaka0</zzpz:Opis_znaka>
-    <zzpz:Nicanska_klasifikacija>1</zzpz:Nicanska_klasifikacija>
-    <zzpz:Nicanska_klasifikacija>1</zzpz:Nicanska_klasifikacija>
-    <zzpz:Pravo_prvenstva_i_osnov>Pravo_prvenstva_i_osnov0</zzpz:Pravo_prvenstva_i_osnov>
-    <zzpz:Placene_takse>
-        <zzpz:Osnovna_taksa>50</zzpz:Osnovna_taksa>
-        <zzpz:Za___klasa>0</zzpz:Za___klasa>
-        <zzpz:Za_graficko_resenje>0</zzpz:Za_graficko_resenje>
-        <zzpz:Ukupno>0</zzpz:Ukupno>
-    </zzpz:Placene_takse>
-    <zzpz:Popunjava_zavod>
-        <zzpz:Prilozi_uz_zahtev>Primerak znaka</zzpz:Prilozi_uz_zahtev>
-        <zzpz:Broj_prijave_ziga>
-            <zzpz:Godina>2006</zzpz:Godina>
-            <zzpz:Broj>5000</zzpz:Broj>
-        </zzpz:Broj_prijave_ziga>
-        <zzpz:Datum_podnosenja>2006-05-04</zzpz:Datum_podnosenja>
-    </zzpz:Popunjava_zavod>
-</zzpz:Zahtev_za_priznanje_ziga>
+<?xml-stylesheet type="text/xsl" href="../xsl-fo/zig.xsl"?>
+<zahtev_za_priznanje_ziga xmlns="http://www.ftn.uns.ac.rs/jaxb/z1"
+                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xsi:schemaLocation="http://www.ftn.uns.ac.rs/jaxb/z1 ../xsd/z1.xsd">
+    <informacije_o_ustanovi>
+        <naziv>Zavod za intelektualnu svojinu</naziv>
+        <adresa>
+            <ulica>Knjeginje Ljubice</ulica>
+            <broj>5</broj>
+            <postanski_broj>11000</postanski_broj>
+            <grad>Beograd</grad>
+        </adresa>
+    </informacije_o_ustanovi>
+    <popunjava_podnosilac>
+        <podnosilac xsi:type="TFizicko_lice">
+            <adresa>
+                <ulica>Balzakova</ulica>
+                <broj>19</broj>
+                <postanski_broj>21000</postanski_broj>
+                <grad>Novi Sad</grad>
+                <drzava>Srbija</drzava>
+            </adresa>
+            <telefon>0652587456</telefon>
+            <email>sonjas@gmail.com</email>
+            <faks>584-985-521</faks>
+            <ime>Sonja</ime>
+            <prezime>Sonjic</prezime>
+        </podnosilac>
+        <punomocnik xsi:type="TFizicko_lice">
+            <adresa>
+                <ulica>Strazilovska</ulica>
+                <broj>23</broj>
+                <postanski_broj>21000</postanski_broj>
+                <grad>Novi Sad</grad>
+                <drzava>Srbija</drzava>
+            </adresa>
+            <telefon>0632548972</telefon>
+            <email>miram@gmail.com</email>
+            <faks>123-456-789</faks>
+            <ime>Mira</ime>
+            <prezime>Miric</prezime>
+        </punomocnik>
+        <zig>
+            <vrsta>
+                <tip_a>
+                    <individualni_zig/>
+                </tip_a>
+                <tip_b>
+                    <graficki_znak/>
+                </tip_b>
+            </vrsta>
+            <naznacenje_boje> Narandzasta, plava</naznacenje_boje>
+            <transliteracija_znak > Latinica</transliteracija_znak>
+            <prevod_znaka >Cirilica</prevod_znaka>
+            <opis_znaka>Krug sa nazivom firme u sredini</opis_znaka>
+            <izgled_znaka> C/User/x/home/logo.jpg</izgled_znaka>
+        </zig>
+        <dodatne_informacije>
+            <klasa_robe_i_uslaga>
+                <klasa>12</klasa>
+                <klasa>45</klasa>
+            </klasa_robe_i_uslaga>
+            <zatrazeno_pravo_prvensta_i_osnov > Zatrazeno </zatrazeno_pravo_prvensta_i_osnov>
+        </dodatne_informacije>
+        <placene_takse>
+            <osnovna_taksa>1000</osnovna_taksa>
+            <za_klasa>
+                <naziv_klase> 5 </naziv_klase>
+                <suma>1500</suma>
+            </za_klasa>
+            <za_graficko_resenje>500</za_graficko_resenje>
+            <ukupno>3000</ukupno>
+        </placene_takse>
+    </popunjava_podnosilac>
+    <popunjava_zavod>
+        <prilozi_uz_zahtev>
+            <primerak_znaka/>
+            <dokaz_o_uplati_takse/>
+            <dokaz_o_pravu_prvenstva/>
+        </prilozi_uz_zahtev>
+        <broj_prijave_ziga>Z-27190/22</broj_prijave_ziga>
+        <datum_podnosenja>2022-07-07</datum_podnosenja>
+    </popunjava_zavod>
+</zahtev_za_priznanje_ziga>

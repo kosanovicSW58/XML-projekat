@@ -1,10 +1,8 @@
 package com.xmlvebservisi.service;
 
-import com.xmlvebservisi.dto.SingleTagDto;
 import com.xmlvebservisi.handler.SAXSchemaHandler;
 import com.xmlvebservisi.util.ParserUtils;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 import javax.xml.bind.JAXBContext;
@@ -14,7 +12,6 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
@@ -24,10 +21,9 @@ import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 import rs.ftn_intelektualna_svojina.tipovi.Adresa;
-import rs.ftn_intelektualna_svojina.tipovi.LicniPodaciOsoba;
 import rs.ftn_intelektualna_svojina.zahtevzaunosenjeuevidenciju.ZahtevZaUnosenjeUEvidenciju;
 
-import static com.xmlvebservisi.util.ParserUtils.writeXml;
+import static com.xmlvebservisi.util.ParserUtils.validateDocumentName;
 
 @Service
 @RequiredArgsConstructor
@@ -37,15 +33,15 @@ public class ParserService {
     private static final String XSD_PATH = "src/main/resources/data/xsd/";
 
     public ResponseEntity<String> readDocument(String documentName) throws Exception {
-        if(!validateDocumentName(documentName)){
+        if(validateDocumentName(documentName)){
             return new ResponseEntity<>("Invalid document name",HttpStatus.BAD_REQUEST);
         }
         ParserUtils.printNode(parseDocument(documentName));
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    public ResponseEntity<String> writeDocument(String documentName, SingleTagDto singleTagDto) throws Exception {
-        if(!validateDocumentName(documentName)){
+    public ResponseEntity<String> writeDocument(String documentName) {
+        if(validateDocumentName(documentName)){
             return new ResponseEntity<>("Invalid document name",HttpStatus.BAD_REQUEST);
         }
 
@@ -70,24 +66,15 @@ public class ParserService {
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             jaxbMarshaller.marshal(zahtevZaUnosenjeUEvidenciju, file);
-
-
-
-//            System.out.println(((Adresa) o).getMesto());
-
-//            jaxbMarshaller.marshal(adresa,file);
-//            jaxbMarshaller.marshal(adresa, System.out);
-
         } catch (JAXBException e) {
             e.printStackTrace();
             return new ResponseEntity<>("Check StackTrace.",HttpStatus.BAD_REQUEST);
         }
-
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     public ResponseEntity<String> validateDocument(String documentName){
-        if(!validateDocumentName(documentName)){
+        if(validateDocumentName(documentName)){
             return new ResponseEntity<>("Invalid document name",HttpStatus.BAD_REQUEST);
         }
 
@@ -108,20 +95,5 @@ public class ParserService {
         DocumentBuilder builder = factory.newDocumentBuilder();
 
         return builder.parse(file);
-    }
-
-    void writeParsedDocument(String documentName, SingleTagDto singleTagDto) throws IOException, ParserConfigurationException, SAXException {
-        Document document = parseDocument(documentName);
-
-        String filepath=String.format("%s%s.xml",XML_PATH,documentName);
-        try (FileOutputStream output = new FileOutputStream(filepath)) {
-            writeXml(document, output);
-        } catch (IOException | TransformerException e) {
-            e.printStackTrace();
-        }
-    }
-
-    boolean validateDocumentName(String documentName){
-        return StringUtils.equals(documentName, "z1") || StringUtils.equals(documentName, "a1") || StringUtils.equals(documentName, "p1");
     }
 }

@@ -6,6 +6,7 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Attr;
 import org.w3c.dom.CDATASection;
 import org.w3c.dom.Comment;
@@ -19,6 +20,10 @@ import org.w3c.dom.ProcessingInstruction;
 import org.w3c.dom.Text;
 
 public final class ParserUtils {
+
+    public static boolean validateDocumentName(String documentName){
+        return !StringUtils.equals(documentName, "z1") && !StringUtils.equals(documentName, "a1") && !StringUtils.equals(documentName, "p1");
+    }
 
     public static void printNode(Node node) {
 

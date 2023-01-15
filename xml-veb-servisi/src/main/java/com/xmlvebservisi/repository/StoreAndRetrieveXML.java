@@ -16,9 +16,9 @@ import java.io.IOException;
 
 public class StoreAndRetrieveXML {
 
-    private static final ConnectionProperties conn;
+    private static ConnectionProperties conn;
 
-    static {
+    public StoreAndRetrieveXML() {
         try {
             conn = AuthenticationUtilities.loadProperties();
         } catch (IOException e) {

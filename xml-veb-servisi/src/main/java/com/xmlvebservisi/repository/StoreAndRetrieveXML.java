@@ -16,18 +16,9 @@ import java.io.IOException;
 
 public class StoreAndRetrieveXML {
 
-    private static ConnectionProperties conn;
-
-    public StoreAndRetrieveXML() {
-        try {
-            conn = AuthenticationUtilities.loadProperties();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public static void retrieve(String args[]) throws Exception {
 
+        ConnectionProperties conn = AuthenticationUtilities.loadProperties();
         // initialize collection and document identifiers
         String collectionId = null;
         String documentId = null;
@@ -102,6 +93,8 @@ public class StoreAndRetrieveXML {
     }
 
     public static void store(String args[]) throws Exception {
+
+        ConnectionProperties conn = AuthenticationUtilities.loadProperties();
 
         // initialize collection and document identifiers
         String collectionId = null;
@@ -193,11 +186,13 @@ public class StoreAndRetrieveXML {
         }
     }
 
-    private static Collection getOrCreateCollection(String collectionUri) throws XMLDBException {
+    private static Collection getOrCreateCollection(String collectionUri) throws XMLDBException, IOException {
         return getOrCreateCollection(collectionUri, 0);
     }
 
-    private static Collection getOrCreateCollection(String collectionUri, int pathSegmentOffset) throws XMLDBException {
+    private static Collection getOrCreateCollection(String collectionUri, int pathSegmentOffset) throws XMLDBException, IOException {
+
+        ConnectionProperties conn = AuthenticationUtilities.loadProperties();
 
         Collection col = DatabaseManager.getCollection(conn.uri + collectionUri, conn.user, conn.password);
 

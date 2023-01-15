@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,17 +28,12 @@ public class ParserController {
         return parserService.validateDocument(documentName);
     }
 
-    @GetMapping(value = "/write/{document_name}",produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> writeDocument(@PathVariable("document_name") String documentName) {
-        return parserService.writeDocument(documentName);
-    }
-
-    @PostMapping(value = "/test/store/{document_name}", produces = APPLICATION_XML_VALUE)
+    @PostMapping(value = "/store/{document_name}", produces = APPLICATION_XML_VALUE)
     public ResponseEntity<String> storeDocument(@PathVariable("document_name") String documentName) throws Exception {
         return parserService.storeXML(documentName);
     }
 
-    @GetMapping(value = "/test/retrieve/{document_name}", produces = APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/retrieve/{document_name}", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<String> retrieveDocument(@PathVariable("document_name") String documentName) throws Exception {
         return parserService.retrieveXML(documentName);
     }

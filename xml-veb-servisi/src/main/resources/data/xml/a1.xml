@@ -13,36 +13,36 @@
                 <Drzava>Republika Srbija</Drzava>
             </Adresa>
             <Kontakt>
-                <Telefon>0600000000</Telefon>
-                <E_posta>marko@gmail.com</E_posta>
-                <Faks>123-00000-000</Faks>
+                <Telefon>069123456</Telefon>
+                <E_posta>blagojevic.uros99@gmail.com</E_posta>
+                <Faks>Nisam ga zavrsio</Faks>
             </Kontakt>
-            <Ime>Marko</Ime>
-            <Prezime>Markovic</Prezime>
-            <Drzavljanstvo>srpsko</Drzavljanstvo>
+            <Ime>Uros</Ime>
+            <Prezime>Blagojevic</Prezime>
+            <Drzavljanstvo>Kanadsko</Drzavljanstvo>
         </Podnosilac>
         <Autori>
             <Anoniman/>
         </Autori>
         <AutorskoDelo>
-            <Naslov>Naslov dela 1</Naslov>
-            <Vrsta>vrsta 1</Vrsta>
-            <Forma>forma 1</Forma>
+            <Naslov>Naslov Autorskog Dela</Naslov>
+            <Vrsta>Vrsta Autorskog Dela</Vrsta>
+            <Forma>Forma Autorskog Dela</Forma>
             <Podaci_o_naslovu_autorskog_dela>
-                <Naslov_autorskog_dela>naslov autorskog dela 2</Naslov_autorskog_dela>
-                <Ime_autora>ime autora 2</Ime_autora>
+                <Naslov_autorskog_dela>Novi Naslov</Naslov_autorskog_dela>
+                <Ime_autora>Slavica Medic</Ime_autora>
             </Podaci_o_naslovu_autorskog_dela>
             <Stvoreno_u_radnom_odnosu/>
-            <Nacin_koriscenja>nacin koriscenja 1</Nacin_koriscenja>
+            <Nacin_koriscenja>Korisceno u razne svrhe</Nacin_koriscenja>
         </AutorskoDelo>
     </Popunjava_podnosilac>
     <Popunjava_zavod>
-        <Broj_prijave>A-1233</Broj_prijave>
-        <Datum_podnosenja>2004-02-14</Datum_podnosenja>
+        <Broj_prijave>A-9988</Broj_prijave>
+        <Datum_podnosenja>01-01-2023</Datum_podnosenja>
         <Prilozi_uz_zahtev>
             <Opis_autorskog_dela>
-                <Opis_sadrzaja_autorskog_dela>Opisano je delo</Opis_sadrzaja_autorskog_dela>
-                <Naziv_autorskog_dela>naziv dela 3</Naziv_autorskog_dela>
+                <Opis_sadrzaja_autorskog_dela>Opis Sadrzaja</Opis_sadrzaja_autorskog_dela>
+                <Naziv_autorskog_dela>Naziv Autorskog Dela</Naziv_autorskog_dela>
             </Opis_autorskog_dela>
             <Primer_autorskog_dela/>
         </Prilozi_uz_zahtev>

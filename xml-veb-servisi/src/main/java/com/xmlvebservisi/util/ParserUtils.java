@@ -21,7 +21,7 @@ import org.w3c.dom.Text;
 
 public final class ParserUtils {
 
-    public static boolean validateDocumentName(String documentName){
+    public static boolean documentNameIsNotValid(String documentName){
         return !StringUtils.equals(documentName, "z1") && !StringUtils.equals(documentName, "a1") && !StringUtils.equals(documentName, "p1");
     }
 

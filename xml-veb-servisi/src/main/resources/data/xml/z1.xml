@@ -15,31 +15,31 @@
     <popunjava_podnosilac>
         <podnosilac xsi:type="TFizicko_lice">
             <adresa>
-                <ulica>Balzakova</ulica>
-                <broj>19</broj>
-                <postanski_broj>21000</postanski_broj>
-                <grad>Novi Sad</grad>
+                <ulica>Ljermontova</ulica>
+                <broj>2</broj>
+                <postanski_broj>11000</postanski_broj>
+                <grad>Beograd</grad>
                 <drzava>Srbija</drzava>
             </adresa>
-            <telefon>0652587456</telefon>
-            <email>sonjas@gmail.com</email>
-            <faks>584-985-521</faks>
-            <ime>Sonja</ime>
-            <prezime>Sonjic</prezime>
+            <telefon>0678899765</telefon>
+            <email>stojanovic.uros99@gmail.com</email>
+            <faks>Nema faksa ni ovde</faks>
+            <ime>Uros</ime>
+            <prezime>Stojanovic</prezime>
         </podnosilac>
         <punomocnik xsi:type="TFizicko_lice">
             <adresa>
-                <ulica>Strazilovska</ulica>
-                <broj>23</broj>
-                <postanski_broj>21000</postanski_broj>
-                <grad>Novi Sad</grad>
+                <ulica>Ljermontova</ulica>
+                <broj>112</broj>
+                <postanski_broj>11000</postanski_broj>
+                <grad>Novi Becej</grad>
                 <drzava>Srbija</drzava>
             </adresa>
-            <telefon>0632548972</telefon>
-            <email>miram@gmail.com</email>
-            <faks>123-456-789</faks>
-            <ime>Mira</ime>
-            <prezime>Miric</prezime>
+            <telefon>067882133</telefon>
+            <email>mikica@hotmail.com</email>
+            <faks>PMF</faks>
+            <ime>Mikica</ime>
+            <prezime>Radojkovic</prezime>
         </punomocnik>
         <zig>
             <vrsta>
@@ -50,27 +50,28 @@
                     <graficki_znak/>
                 </tip_b>
             </vrsta>
-            <naznacenje_boje> Narandzasta, plava</naznacenje_boje>
-            <transliteracija_znak > Latinica</transliteracija_znak>
+            <naznacenje_boje> Bordo </naznacenje_boje>
+            <transliteracija_znak > Cirilica</transliteracija_znak>
             <prevod_znaka >Cirilica</prevod_znaka>
-            <opis_znaka>Krug sa nazivom firme u sredini</opis_znaka>
-            <izgled_znaka> C/User/x/home/logo.jpg</izgled_znaka>
+            <opis_znaka>Logotip</opis_znaka>
+            <izgled_znaka> D/logo.jpg</izgled_znaka>
         </zig>
         <dodatne_informacije>
             <klasa_robe_i_uslaga>
-                <klasa>12</klasa>
-                <klasa>45</klasa>
+                <klasa>19</klasa>
+                <klasa>20</klasa>
+                <klasa>21</klasa>
             </klasa_robe_i_uslaga>
             <zatrazeno_pravo_prvensta_i_osnov > Zatrazeno </zatrazeno_pravo_prvensta_i_osnov>
         </dodatne_informacije>
         <placene_takse>
-            <osnovna_taksa>1000</osnovna_taksa>
+            <osnovna_taksa>11000</osnovna_taksa>
             <za_klasa>
                 <naziv_klase> 5 </naziv_klase>
-                <suma>1500</suma>
+                <suma>12500</suma>
             </za_klasa>
-            <za_graficko_resenje>500</za_graficko_resenje>
-            <ukupno>3000</ukupno>
+            <za_graficko_resenje>100</za_graficko_resenje>
+            <ukupno>3500</ukupno>
         </placene_takse>
     </popunjava_podnosilac>
     <popunjava_zavod>
@@ -79,7 +80,7 @@
             <dokaz_o_uplati_takse/>
             <dokaz_o_pravu_prvenstva/>
         </prilozi_uz_zahtev>
-        <broj_prijave_ziga>Z-27190/22</broj_prijave_ziga>
-        <datum_podnosenja>2022-07-07</datum_podnosenja>
+        <broj_prijave_ziga>Z-99881/23</broj_prijave_ziga>
+        <datum_podnosenja>2023-01-01</datum_podnosenja>
     </popunjava_zavod>
 </zahtev_za_priznanje_ziga>

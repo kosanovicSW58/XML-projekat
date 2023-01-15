@@ -17,21 +17,19 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.sax.SAXResult;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.apache.fop.apps.FOUserAgent;
 import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
 import org.apache.fop.apps.MimeConstants;
 import org.apache.xalan.processor.TransformerFactoryImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import static com.xmlvebservisi.util.ParserUtils.validateDocumentName;
+import static com.xmlvebservisi.util.ParserUtils.documentNameIsNotValid;
 
 @Service
 @RequiredArgsConstructor
@@ -44,10 +42,9 @@ public class GeneratorService {
     private static final String HTML_FILE_PATH = RESOURCES_PATH + "data/html/%s.html";
     private static final String XHTML_FILE_PATH = RESOURCES_PATH + "data/xhtml/%s.xsl";
     private static final String FOP_CONF_PATH = RESOURCES_PATH + "fop.xconf";
-    private static DocumentBuilderFactory documentBuilderFactory;
 
     public ResponseEntity<String> generatePdfFromDocument(String documentName) throws IOException, SAXException {
-        if(validateDocumentName(documentName)){
+        if(documentNameIsNotValid(documentName)){
             return new ResponseEntity<>("Invalid document name", HttpStatus.BAD_REQUEST);
         }
         FopFactory fopFactory = FopFactory.newInstance(new File(FOP_CONF_PATH));
@@ -81,7 +78,6 @@ public class GeneratorService {
             if (!pdfFile.getParentFile().exists()) {
                 System.out.println("[INFO] A new directory is created: " + pdfFile.getParentFile().getAbsolutePath() + ".");
                 pdfFile.getParentFile().mkdir();
-                System.out.println("USO");
             }
             OutputStream out = new BufferedOutputStream(new FileOutputStream(pdfFile));
             out.write(outStream.toByteArray());
@@ -95,7 +91,7 @@ public class GeneratorService {
     }
 
     public ResponseEntity<String> generateHtmlFromDocument(String documentName) {
-            if(validateDocumentName(documentName)){
+            if(documentNameIsNotValid(documentName)){
                 return new ResponseEntity<>("Invalid document name", HttpStatus.BAD_REQUEST);
             }
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -124,7 +120,7 @@ public class GeneratorService {
     }
 
     public Document buildDocument(String filePath) {
-        documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         documentBuilderFactory.setNamespaceAware(true);
         documentBuilderFactory.setIgnoringComments(true);
         documentBuilderFactory.setIgnoringElementContentWhitespace(true);

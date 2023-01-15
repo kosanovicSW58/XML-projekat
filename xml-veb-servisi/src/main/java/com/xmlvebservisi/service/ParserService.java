@@ -14,7 +14,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -23,7 +22,7 @@ import org.xml.sax.SAXException;
 import rs.ftn_intelektualna_svojina.tipovi.Adresa;
 import rs.ftn_intelektualna_svojina.zahtevzaunosenjeuevidenciju.ZahtevZaUnosenjeUEvidenciju;
 
-import static com.xmlvebservisi.util.ParserUtils.validateDocumentName;
+import static com.xmlvebservisi.util.ParserUtils.documentNameIsNotValid;
 
 @Service
 @RequiredArgsConstructor
@@ -33,7 +32,7 @@ public class ParserService {
     private static final String XSD_PATH = "src/main/resources/data/xsd/";
 
     public ResponseEntity<String> readDocument(String documentName) throws Exception {
-        if(validateDocumentName(documentName)){
+        if(documentNameIsNotValid(documentName)){
             return new ResponseEntity<>("Invalid document name",HttpStatus.BAD_REQUEST);
         }
         ParserUtils.printNode(parseDocument(documentName));
@@ -41,7 +40,7 @@ public class ParserService {
     }
 
     public ResponseEntity<String> writeDocument(String documentName) {
-        if(validateDocumentName(documentName)){
+        if(documentNameIsNotValid(documentName)){
             return new ResponseEntity<>("Invalid document name",HttpStatus.BAD_REQUEST);
         }
 
@@ -74,7 +73,7 @@ public class ParserService {
     }
 
     public ResponseEntity<String> validateDocument(String documentName){
-        if(validateDocumentName(documentName)){
+        if(documentNameIsNotValid(documentName)){
             return new ResponseEntity<>("Invalid document name",HttpStatus.BAD_REQUEST);
         }
 

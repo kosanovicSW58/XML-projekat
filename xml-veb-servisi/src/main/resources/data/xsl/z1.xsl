@@ -318,7 +318,129 @@
                         </fo:table>
                     </fo:block>
 
-                    <fo:block margin-top="180px" text-align="center">
+                    <fo:block>
+                        <fo:block text-align="center" font-size="20px" margin-top="50px">
+                            Informacije o placanju
+                        </fo:block>
+                        <fo:table margin-top="10px">
+                            <fo:table-column column-width="50%"/>
+                            <fo:table-column column-width="50%"/>
+                            <fo:table-body>
+                                <fo:table-row border="1px solid black">
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" border="1px solid black">
+                                        <fo:block>Placene takse</fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" border="1px solid black">
+                                        <fo:block>Dinara</fo:block>
+                                    </fo:table-cell>
+                                </fo:table-row>
+
+                                <fo:table-row border="1px solid black">
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" background-color="#808080" border="1px solid black">
+                                        <fo:block>
+                                            Osnovna taksa:
+                                        </fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" background-color="#808080" border="1px solid black">
+                                        <fo:block>
+                                            <xsl:value-of select="//z1:osnovna_taksa"/>
+                                        </fo:block>
+                                    </fo:table-cell>
+                                </fo:table-row>
+
+                                <fo:table-row border="1px solid black">
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" background-color="#808080" border="1px solid black">
+                                        <fo:block>
+                                            Za
+                                            <fo:inline>
+                                                <xsl:value-of select="//z1:za_klasa/z1:naziv_klase"/>
+                                            </fo:inline>
+                                            klasa:
+                                        </fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" background-color="#808080" border="1px solid black">
+                                        <fo:block>
+                                            <xsl:value-of select="//z1:za_klasa/z1:suma"/>
+                                        </fo:block>
+                                    </fo:table-cell>
+                                </fo:table-row>
+
+                                <fo:table-row border="1px solid black">
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" background-color="#808080" border="1px solid black">
+                                        <fo:block>
+                                            Graficko resenje:
+                                        </fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" background-color="#808080" border="1px solid black">
+                                        <fo:block>
+                                            <xsl:value-of select="//z1:za_graficko_resenje"/>
+                                        </fo:block>
+                                    </fo:table-cell>
+                                </fo:table-row>
+
+                                <fo:table-row border="1px solid black">
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" background-color="#808080" border="1px solid black">
+                                        <fo:block>
+                                            Ukupno:
+                                        </fo:block>
+                                    </fo:table-cell>
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" background-color="#808080" border="1px solid black">
+                                        <fo:block>
+                                            <xsl:value-of select="//z1:ukupno"/>
+                                        </fo:block>
+                                    </fo:table-cell>
+                                </fo:table-row>
+                            </fo:table-body>
+                        </fo:table>
+                    </fo:block>
+
+                    <fo:block>
+                        <fo:block text-align="center" font-size="20px" margin-bottom="15px" margin-top="55px">
+                            Popunjava zavod
+                        </fo:block>
+                        <fo:table>
+                            <fo:table-column/>
+                            <fo:table-body>
+                                <fo:table-row>
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" border="1px solid black">
+                                        <fo:block>
+                                            Prilozi uz zahtev
+                                        </fo:block>
+                                    </fo:table-cell>
+                                </fo:table-row>
+                                <fo:table-row>
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" background-color="#808080">
+                                        <fo:block>
+                                            <xsl:choose>
+                                                <xsl:when test="//z1:popunjava_zavod/z1:prilozi_uz_zahtev/z1:primerak_znaka">
+                                                    Primer znaka
+                                                </xsl:when>
+                                            </xsl:choose>
+                                        </fo:block>
+                                    </fo:table-cell>
+                                </fo:table-row>
+                                <fo:table-row>
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" background-color="#808080">
+                                        <fo:block>
+                                            <xsl:value-of select="//z1:dokaz_o_uplati_takse"/>
+                                            Dokaz o uplati takse
+                                        </fo:block>
+                                    </fo:table-cell>
+                                </fo:table-row>
+                                <fo:table-row>
+                                    <fo:table-cell padding="8px" font-size="15px" text-align="center" background-color="#808080">
+                                        <fo:block>
+                                            <xsl:value-of select="//z1:dokaz_o_pravu_prvenstva"/>
+                                            Dokaz o pravu prvenstva
+                                        </fo:block>
+                                    </fo:table-cell>
+                                </fo:table-row>
+                            </fo:table-body>
+                        </fo:table>
+                    </fo:block>
+
+
+                    <fo:block margin-top="20px" text-align="center">
                         <fo:table>
                             <fo:table-column column-width="50%"/>
                             <fo:table-column column-width="50%"/>
@@ -350,8 +472,6 @@
                             </fo:table-body>
                         </fo:table>
                     </fo:block>
-
-
                 </fo:flow>
             </fo:page-sequence>
         </fo:root>

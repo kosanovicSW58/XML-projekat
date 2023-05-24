@@ -6,6 +6,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ButtonComponent } from './components/button/button.component';
 import { RouterModule, Routes} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './services/api.services';
 
 const appRoutes: Routes = [
   { path: '', component : LoginComponent},
@@ -21,9 +23,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ ApiService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

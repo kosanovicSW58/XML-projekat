@@ -9,6 +9,41 @@
             <xs:element name="Kontakt" type="tip:Kontakt"/>
         </xs:sequence>
     </xs:complexType>
+    <xs:complexType name="Korisnik">
+        <xs:sequence>
+            <xs:element name="Adresa" type="tip:Adresa"/>
+            <xs:element name="Kontakt" type="tip:Kontakt"/>
+            <xs:element name="Ime">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="3"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Prezime">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="3"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Lozinka">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="3"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Tip_naloga">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="GRADJANIN"/>
+                        <xs:enumeration value="SLUZBENIK"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
     <xs:complexType name="Licni_podaci_jednostavno">
         <xs:sequence>
             <xs:element name="Adresa" type="tip:Adresa_bez_drzave"/>

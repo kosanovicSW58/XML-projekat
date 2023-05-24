@@ -2,6 +2,7 @@ package com.xmlvebservisi.service;
 
 import com.xmlvebservisi.dto.user.CreateUserDto;
 import com.xmlvebservisi.dto.user.LoginUserDto;
+import com.xmlvebservisi.repository.StoreAndRetrieveXML;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class AuthService {
 
     private final PasswordEncoder passwordEncoder;
 
-    public ResponseEntity<?> registerUser(CreateUserDto createUserDto) {
+    public ResponseEntity<?> registerUser(CreateUserDto createUserDto) throws Exception {
         Korisnik user = new Korisnik();
         Adresa address = new Adresa();
 
@@ -41,6 +42,9 @@ public class AuthService {
         user.setKontakt(kontakt);
         user.setTipNaloga(createUserDto.getRole().name());
         user.setLozinka(passwordEncoder.encode(createUserDto.getPassword()));
+
+        String[] args = {"/db/sample/library", user.getKontakt().getEmail() + ".xml", "src/main/resources/data/xml/" + user.getKontakt().getEmail() + ".xml"};
+        StoreAndRetrieveXML.store(args);
 
         return new ResponseEntity<>(user, HttpStatus.OK);
     }

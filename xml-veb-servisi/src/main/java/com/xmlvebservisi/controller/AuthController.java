@@ -3,6 +3,7 @@ package com.xmlvebservisi.controller;
 import com.xmlvebservisi.dto.user.CreateUserDto;
 import com.xmlvebservisi.dto.user.LoginUserDto;
 import com.xmlvebservisi.service.AuthService;
+import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +21,7 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping(path = "/register", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> register(@RequestBody CreateUserDto createUserDto) {
+    public ResponseEntity<?> register(@Valid @RequestBody CreateUserDto createUserDto) throws Exception {
         return authService.registerUser(createUserDto);
     }
 

@@ -8,13 +8,12 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-@Constraint(validatedBy = {NotBlankResolver.class})
+@Constraint(validatedBy = {PositiveIntegerResolver.class})
 @Documented
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface NotBlank {
-
-    String message() default "must not be null or blank";
+public @interface PositiveInteger {
+    String message() default "must be a positive whole number bigger than 0.";
 
     Class<?>[] groups() default {};
 

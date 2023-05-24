@@ -1,6 +1,7 @@
 package com.xmlvebservisi.dto.user;
 
 import com.xmlvebservisi.config.annotations.NotBlank;
+import com.xmlvebservisi.config.annotations.PositiveInteger;
 import com.xmlvebservisi.model.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,18 +33,17 @@ public class CreateUserDto {
     @NotBlank
     private String address;
 
-    @NotBlank
+    @PositiveInteger
     private Integer addressNumber;
 
     @NotBlank
     private String city;
 
-    @NotBlank
+    @PositiveInteger
     private Integer postalCode;
 
     @NotBlank
     private String country;
 
-    @NotBlank
     private Role role;
 }
